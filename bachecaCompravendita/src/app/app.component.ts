@@ -5,6 +5,8 @@ import {  //Importa FormBuilder e FormGroup
   FormGroup,
   Validators
 } from '@angular/forms';
+import { utenti } from './mock-utenti';
+
 
 
 @Component({
@@ -14,14 +16,14 @@ import {  //Importa FormBuilder e FormGroup
 })
 export class AppComponent {
   title = 'bachecaCompravendita';
-   utenti : Utente[];
+   ut = utenti;
    myForm: FormGroup;
  constructor(fb: FormBuilder) {
-   this.utenti = new Array<Utente>();
+   
    this.myForm = fb.group({
      'nome': ['', Validators.required],
      'cognome': ['', Validators.required],
-     'email': ['', Validators.required],
+     'email': ['', [Validators.required , Validators.email]],
      'psw': ['', Validators.required]
      
      
@@ -39,7 +41,7 @@ export class AppComponent {
     utente.psw = this.myForm.controls['psw'].value;
    
 
-    this.utenti.push(utente);
+    this.ut.push(utente);
  }
 
 }
