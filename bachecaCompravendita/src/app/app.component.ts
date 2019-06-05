@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { Utente } from './Utente';
-import {  //Importa FormBuilder e FormGroup
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+
 import { utenti } from './mock-utenti';
 
 
@@ -16,32 +12,36 @@ import { utenti } from './mock-utenti';
 })
 export class AppComponent {
   title = 'bachecaCompravendita';
-   ut = utenti;
-   myForm: FormGroup;
- constructor(fb: FormBuilder) {
-   
-   this.myForm = fb.group({
-     'nome': ['', Validators.required],
-     'cognome': ['', Validators.required],
-     'email': ['', [Validators.required , Validators.email]],
-     'psw': ['', Validators.required]
-     
-     
-   });
- }
- ngOnInit() {
- }
+   ut : Utente[] = utenti;
+    loggedUser: Utente = null;
+  showLogin : Boolean = false;
+  showReg : Boolean = false;
+  constructor()
+  {
 
- onSubmit(value: string): void {
-    let utente: Utente = new Utente();
-    utente.nome =  this.myForm.controls['nome'].value;
-    utente.cognome = this.myForm.controls['cognome'].value;
-   
-    utente.email = this.myForm.controls['email'].value;
-    utente.psw = this.myForm.controls['psw'].value;
-   
-
-    this.ut.push(utente);
- }
+  }
+  triggerReg()
+  {
+    this.showReg = !this.showReg;
+    this.showLogin = false;
+  }
+  triggerLogin()
+  {
+    this.showLogin = !this.showLogin;
+    this.showReg = false;
+  }
+  logout()
+  {
+    this.loggedUser = null;
+  }
+  setUtenteLoggato(u : Utente)
+  {
+    this.loggedUser = u;
+  }
+  stampaUtenteLoggato()
+  {
+    console.log(this.loggedUser);
+  }
+  
 
 }

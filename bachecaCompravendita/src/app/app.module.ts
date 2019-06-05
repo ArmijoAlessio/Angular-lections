@@ -10,10 +10,16 @@ import {   //Importare le funzionalità nella nostra applicazione
 
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrazioneComponent } from './registrazione/registrazione.component';
+import { ElencoComponent } from './elenco/elenco.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegistrazioneComponent,
+    ElencoComponent
   ],
   imports: [
     BrowserModule, FormsModule,  //Anche qui
