@@ -1,9 +1,4 @@
 @import '~bootstrap/dist/css/bootstrap.css';
-
-
-
-.elenco{
+.bache{
     background-color: #ffff99;
-    width: 50%;
-     margin: 5% 25%;
 }

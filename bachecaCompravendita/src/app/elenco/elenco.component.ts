@@ -6,7 +6,7 @@ import { Utente } from '../Utente';
   styleUrls: ['./elenco.component.css']
 })
 export class ElencoComponent implements OnInit {
- @Input() utenti : Utente[];
+ @Input() lista : Utente[];
   constructor() { }
 
   ngOnInit() {

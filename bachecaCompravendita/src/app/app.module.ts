@@ -13,13 +13,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
 import { ElencoComponent } from './elenco/elenco.component';
+import { BachecaCommentiComponent } from './bacheca-commenti/bacheca-commenti.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrazioneComponent,
-    ElencoComponent
+    ElencoComponent,
+    BachecaCommentiComponent
   ],
   imports: [
     BrowserModule, FormsModule,  //Anche qui

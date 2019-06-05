@@ -9,7 +9,7 @@ import { Utente } from '../Utente';
 })
 export class LoginComponent implements OnInit {
   @Input() loggedUser : Utente;
-  @Input() utenti : Utente[];
+  @Input() lista : Utente[];
   @Output() userLogin = new EventEmitter<Utente>();
   failed : boolean = false;
   formLog : FormGroup;
@@ -23,12 +23,12 @@ export class LoginComponent implements OnInit {
   }
   login()
   {
-    for(let i = 0; i < this.utenti.length; i++)
+    for(let i = 0; i < this.lista.length; i++)
     {
-      if(this.formLog.controls['email'].value == this.utenti[i].email &&
-        this.formLog.controls['password'].value == this.utenti[i].psw)
+      if(this.formLog.controls['email'].value == this.lista[i].email &&
+        this.formLog.controls['password'].value == this.lista[i].psw)
       {
-        this.loggedUser = this.utenti[i];
+        this.loggedUser = this.lista[i];
         this.userLogin.emit(this.loggedUser);
         console.log(this.loggedUser);
         break;
