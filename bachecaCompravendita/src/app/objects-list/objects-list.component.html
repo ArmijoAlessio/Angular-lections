@@ -1,0 +1,17 @@
+<div class="jumbotron bache" *ngIf="loggedUser">
+<h4> Oggetti sul sito </h4>
+    <div class="card-header">
+        <ul>
+            <li *ngFor = "let u of oggettoUtente">
+                 <h4>{{u.nomeOggetto}}</h4>
+                 <h6>{{u.proprietario}}</h6>
+            </li>
+        </ul>
+       <ul>
+            <li *ngFor = "let u of oggetto">
+                 <h4>{{u.oggetto}}</h4>
+                 <h6>{{u.username}}</h6>
+            </li>
+        </ul>
+    </div>
+</div>

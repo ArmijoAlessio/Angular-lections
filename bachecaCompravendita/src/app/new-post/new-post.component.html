@@ -1,0 +1,17 @@
+<div class="jumbotron bache" *ngIf="loggedUser">
+<select id="lista" [(ngModel)]="selectedOggetto">
+  <option *ngFor="let o of oggetto">
+    {{o.oggetto}}</option>
+</select>
+<form [formGroup] = "postForm" class="jumbotron"  (ngSubmit)="onSubmit(postForm.value)">
+     Commento: <input type="text" [formControl]="postForm.controls['commento']" class="form-control"><br>
+     <button (click)="print()" class="btn btn-primary">Invia</button>
+     <br>
+     <div >
+      <h3>Post di: {{utente}}</h3><hr>
+      <h4>Oggetto selezionato: {{scelta}} </h4><hr>
+      <h5>Commento al post: {{commento}} </h5>
+     </div>
+</form>
+
+</div>

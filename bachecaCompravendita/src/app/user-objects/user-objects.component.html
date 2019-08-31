@@ -1,0 +1,11 @@
+<div class="jumbotron bache" *ngIf="loggedUser">
+<h4> Oggetti in possesso dell'utente </h4>
+    <div class="card-header">
+        <ul>
+            <li *ngFor = "let u of oggettoV">
+                 <h5>{{u}}</h5>
+            </li>
+        </ul>
+        <button (click)="onContr()" class="btn btn-secondary">Vedere</button>
+    </div>
+</div>

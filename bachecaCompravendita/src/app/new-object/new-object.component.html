@@ -1,0 +1,45 @@
+
+  <div *ngIf="loggedUser">
+  <div class="form-group bache">
+    <h3> Oggetti usati </h3>
+
+        <form [formGroup] = "oggettiForm"  (ngSubmit)="onSubmit(oggettiForm.value)" class="jumbotron">
+          Oggetto: <input type="text" [formControl]="oggettiForm.controls['oggetto']" class="form-control">
+          <div *ngIf="!oggettiForm.controls['oggetto'].valid" class="alert alert-danger">Oggetto non è valido </div>
+          <div *ngIf="oggettiForm.controls['oggetto'].hasError('required')" class="alert alert-danger">Oggetto è richiesto</div>
+
+          Descrizione: <input type="text" [formControl]="oggettiForm.controls['descrizione']" class="form-control">
+          <div *ngIf="!oggettiForm.controls['descrizione'].valid" class="alert alert-danger">Descrizione non è valido </div>
+          <div *ngIf="oggettiForm.controls['descrizione'].hasError('required')" class="alert alert-danger">Descrizione è richiesto</div>
+
+          Prezzo: <input type="text" [formControl]="oggettiForm.controls['prezzo']" class="form-control">
+          <div *ngIf="!oggettiForm.controls['prezzo'].valid" class="alert alert-danger">Prezzo non è valido </div>
+          <div *ngIf="oggettiForm.controls['prezzo'].hasError('required')" class="alert alert-danger">Prezzo è richiesto</div>
+
+          Link: <input type="text" [formControl]="oggettiForm.controls['link']" class="form-control">
+          <div *ngIf="!oggettiForm.controls['link'].valid" class="alert alert-danger">Link non è valido </div>
+          <div *ngIf="oggettiForm.controls['link'].hasError('required')" class="alert alert-danger">Link è richiesto</div>
+
+          <button type='submit' class="btn btn-primary">Invio</button>
+           </form>
+    </div>
+<br>
+<br>
+   <div class="jumbotron bache">
+    <h4> Oggetti inseriti dagli utenti </h4>
+    <div class="card-header">
+        <ul>
+            <li *ngFor = "let o of oggetto">
+                <div class="card-body">
+                    <h5>{{o.oggetto}} </h5>
+                    Descrizione: {{o.descrizione}}<br>
+                    Prezzo: {{o.prezzo}}<br>
+                    Link:  <a href="{{ o.link }}"> {{o.link}} </a><br>
+                    Pubblicato da: {{o.username}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+

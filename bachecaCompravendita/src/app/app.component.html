@@ -8,11 +8,11 @@
 <div class="container col-sm-6" >
  <app-registrazione [lista] ="ut"></app-registrazione>
  </div>
- 
+
  <div class="container col-sm-6" >
-  
+
  <app-elenco [lista]="ut"></app-elenco>
-   
+
  </div>
  <div class="container col-sm-6">
  <app-login *ngIf="showLogin && !loggedUser" (userLogin)="setUtenteLoggato($event)" [loggedUser]="loggedUser" [lista]="ut"></app-login>
@@ -20,8 +20,20 @@
   <div class="container col-sm-12">
     <app-bacheca-commenti [loggedUser]="loggedUser"></app-bacheca-commenti>
 </div>
-  
+<div class="container col-sm-6">
+    <app-new-object [loggedUser]="loggedUser"></app-new-object>
+</div>
+<div class="container col-sm-6">
+ <app-user-objects [loggedUser]="loggedUser"></app-user-objects>
+</div>
+<div class="container col-sm-6">
+      <app-objects-list></app-objects-list>
+</div>
+<div class="container col-sm-6">
+      <app-new-post [loggedUser]="loggedUser"></app-new-post>
+</div>
  </div>
- </div>
- 
- 
+</div>
+
+
+
